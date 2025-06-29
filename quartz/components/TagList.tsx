@@ -6,18 +6,21 @@ const TagList: QuartzComponent = ({ fileData, displayClass }: QuartzComponentPro
   const tags = fileData.frontmatter?.tags
   if (tags && tags.length > 0) {
     return (
-      <ul class={classNames(displayClass, "tags")}>
-        {tags.map((tag) => {
-          const linkDest = resolveRelative(fileData.slug!, `tags/${tag}` as FullSlug)
-          return (
-            <li>
-              <a href={linkDest} class="internal tag-link">
-                {tag}
-              </a>
-            </li>
-          )
-        })}
-      </ul>
+      <div class={classNames(displayClass, "tags-container")}>
+        <span class="tags-label">Tags: </span>
+        <ul class={classNames(displayClass, "tags")}>
+          {tags.map((tag) => {
+            const linkDest = resolveRelative(fileData.slug!, `tags/${tag}` as FullSlug)
+            return (
+              <li>
+                <a href={linkDest} class="internal tag-link">
+                  {tag}
+                </a>
+              </li>
+            )
+          })}
+        </ul>
+      </div>
     )
   } else {
     return null
@@ -25,12 +28,20 @@ const TagList: QuartzComponent = ({ fileData, displayClass }: QuartzComponentPro
 }
 
 TagList.css = `
+.tags-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  color: var(--gray);
+}
+
 .tags {
   list-style: none;
   display: flex;
   padding-left: 0;
   gap: 0.4rem;
-  margin: 1rem 0;
+  margin: 0;
   flex-wrap: wrap;
 }
 
@@ -46,10 +57,15 @@ TagList.css = `
 }
 
 a.internal.tag-link {
-  border-radius: 8px;
-  background-color: var(--highlight);
-  padding: 0.2rem 0.4rem;
-  margin: 0 0.1rem;
+  padding: 0;
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--gray);
+  background-color: transparent;
+}
+
+a.internal.tag-link:hover {
+  color: var(--secondary);
 }
 `
 

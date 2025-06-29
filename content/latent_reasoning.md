@@ -1,6 +1,10 @@
 ---
-title: On the Implications of Recent Results in Latent Reasoning
+title: On Recent Results in LLM Latent Reasoning
 draft: false
+date: 2025-03-31
+tags:
+  - ai
+  - essay
 ---
 
 Faithful and legible CoT is perhaps the most powerful tool currently available to alignment researchers for understanding LLMs. Recently, multiple papers have proposed new LLM architectures aimed at improving reasoning performance at the expense of transparency and legibility. Due to the importance of legible CoT as an interpretability tool, I view this as a concerning development. This motivated me to go through the recent literature on such architectures, trying to understand the potential implications of each of them. Specifically, I was looking to answer the following questions for each paper:

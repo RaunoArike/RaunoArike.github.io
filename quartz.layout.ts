@@ -21,9 +21,34 @@ export const defaultContentPageLayout: PageLayout = {
       component: Component.Breadcrumbs(),
       condition: (page) => page.fileData.slug !== "index",
     }),
-    Component.ArticleTitle(),
+    Component.ConditionalRender({
+      component: Component.ArticleTitle(),
+      condition: (page) => page.fileData.slug !== "index",
+    }),
     Component.ContentMeta(),
     Component.TagList(),
+    Component.ConditionalRender({
+      component: Component.CategoryPosts({
+        categories: [
+          {
+            name: "Essays",
+            tags: ["essay"],
+            limit: 10,
+          },
+          {
+            name: "Papers",
+            tags: ["paper"],
+            limit: 10,
+          },
+          {
+            name: "Collections",
+            tags: ["collection"],
+            limit: 10,
+          },
+        ],
+      }),
+      condition: (page) => page.fileData.slug === "index",
+    }),
   ],
   left: [
     Component.PageTitle(),
