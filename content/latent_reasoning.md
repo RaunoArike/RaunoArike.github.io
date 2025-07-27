@@ -25,7 +25,7 @@ In this paper, the authors introduce a new LLM architecture that is **depth-recu
 Schematically, this looks as follows:
 
 <div style="text-align: center">
-<img src="/img/latent_reasoning_1.png" alt="Huginn architecture" style="width: 400px; margin: 1em 0;">
+<img src="/img/latent_reasoning_1.png" alt="Huginn architecture">
 </div>
 
 The recurrent block $R$ can be looped for multiple iterations: e.g., the second iteration takes the final state of the first iteration as input and applies the same recurrent layers to refine this state further. During training, the number of recurrent iterations is sampled randomly for each input sequence, and each token within a single sequence is processed with the same number of recurrent iterations. At inference-time, the architecture zero-shot generalizes to perform different amounts of recurrent iterations for each input token. This is achieved by using a convergence criterion based on the KL-divergence between successive recurrent steps. If this KL-divergence falls below a threshold, the model stops iterating the recurrent block and moves on to the next token, thus being able to use per-token adaptive compute.[^1]
@@ -61,7 +61,7 @@ How does all of this stack up against my questions?
 This paper already has an [excellent summary by Caleb Biddulph](https://www.lesswrong.com/posts/D2Aa25eaEhdBNeEEy/worries-about-latent-reasoning-in-llms), so I’ll keep my own summary short. The authors train a model they call COCONUT (Chain of Continuous Thought) that can directly take its last hidden state at some token as the next input embedding. To achieve this, they take a pre-trained transformer (GPT-2 in the paper) and apply an iterative scheme to make it perform more and more of its reasoning without any output tokens. Specifically, the training procedure begins with the model generating a full CoT in natural language. In the first stage, the authors remove a single token from the front of the reasoning chain and replace it with a latent reasoning step. In the second stage, another token is removed from the reasoning chain and replaced with a latent reasoning step. Between the stages, cross-entropy loss is calculated on the remaining tokens after the continuous thoughts. The following figure provides a good visualization of the training procedure.
 
 <div style="text-align: center">
-<img src="/img/latent_reasoning_2.png" alt="COCONUT architecture" style="width: 400px; margin: 1em 0;">
+<img src="/img/latent_reasoning_2.png" alt="COCONUT architecture">
 </div>
 
 The paper presents this as a proof-of-concept: the training scheme can work, but benchmark results aren’t by any means flashy yet. COCONUT is tested on three benchmarks: GSM8k, ProntoQA, and ProsQA. It shows clear efficiency gains compared to a CoT-tuned version of GPT-2: on GSM8k, it produced answers in an average of 8.2 forward passes, compared to 25.0 for CoT. However, it lost out to CoT fine-tuning on accuracy. I recommend taking a look at Caleb's aforementioned post for a more thorough look into the results.

@@ -29,13 +29,13 @@ First, note that there are numerous ways to define entropy. There's Boltzmann en
 
 ### Classical considerations
 
-1. Using the common-sense definition of the universe as that which encompasses all time and space, it cannot be anything but an isolated system. By definition, there is nothing outside the universe to exchange matter and energy with. This immediately points us to a potential issue: if there's nothing outside the universe, then what is it expanding into?
+1. Using the common-sense definition of the universe as that which encompasses all time and space, it cannot be anything but an isolated system. By definition, there is nothing outside the universe to exchange matter and energy with. This points us to a potential issue: if there's nothing outside the universe, then what is it expanding into?
 2. For the calculation of entropy to make sense, we need a system where some parameters (a combination of temperature, volume, pressure, enthalpy, and some other macro-level parameters) remain constant.
 3. If we assume the holographic principle, the maximum entropy of any region of space is proportional not to its volume but to the area of the boundary surface enclosing that region. In an expanding universe, the boundary area enclosing the universe grows and thus, the maximum possible entropy also increases.
 
 ### Quantum mechanical considerations
 
-1. Every pure state has a von Neumann entropy of zero, while a maximally mixed state has a von Neumann entropy of one. If we were to take the many-worlds perspective, then the universal wavefunction is always in a pure state and mixed states arise in our maps of the world due to the fact that our observations are fundamentally limited only to a small subsystem of the universal wavefunction. From an observer-free perspective, the multiverse is an isolated system undergoing unitary evolution. Such a system is always in a pure state and thus, its entropy starts out zero and remains zero forever.
+1. Every pure state has a von Neumann entropy of zero, while a maximally mixed state has a von Neumann entropy of one. If we were to take the many-worlds view, then the universal wavefunction is always in a pure state and mixed states arise in our maps of the world due to the fact that our observations are fundamentally limited only to a small subsystem of the universal wavefunction. From an observer-free perspective, the multiverse is an isolated system undergoing unitary evolution. Such a system is always in a pure state and thus, its entropy starts out zero and remains zero forever. Since the resolution of the question is fairly straightforward in this case, I'll focus on the question of whether entropy is increasing inside our specific branch of the multiverse.
 2. The entropy of a system depends on the size of its quantum phase space. As the size of the phase space increases (through more degrees of freedom, energy levels, particles, etc.), the maximum possible entropy increases accordingly.
 3. In quantum mechanics, we don't have a single second law, but rather a family of second laws.
 
@@ -63,9 +63,7 @@ The second view mistakenly treats space as a static background against which obj
 
 ### What macro-level parameters can we assume to be constant when calculating entropy? 
 
-If the coordinate system is stretching, then intuitively, the volume of the universe should remain constant at all times. OK, but what if we froze the universe at some point, defined a coordinate system based on the scale factor measured for that snapshot of the universe, and used this coordinate system at all times throughout the evolution of the universe? Would we still be able to perform valid entropy calculations?
-
-Cosmologists distinguish between proper volume (which expands with the universe) and comoving volume (which factors out the cosmic expansion). The entropy density per comoving volume provides a meaningful measure that accounts for expansion...
+If the coordinate system is stretching, then intuitively, the volume of the universe should remain constant at all times. However, cosmologists distinguish between proper volume (which expands with the universe) and comoving volume (which factors out the cosmic expansion). The entropy density per comoving volume provides a meaningful measure that accounts for expansion...
 
 ### Is the boundary area enclosing the universe growing? 
 
@@ -73,9 +71,21 @@ Recall our conclusion from above: we shouldn't say that the universe is expandin
 
 Here, an important clarification is that we can make arguments based on the holographic principle only once we have defined the boundary that we're talking about. One well-defined boundary we might choose is the cosmic event horizon — the boundary beyond which we cannot receive signals due to the expansion of space. Due to the fact that our universe is expanding, the proper distance to the cosmic event horizon is growing, but it's approaching a constant value rather than growing indefinitely. Thus, the maximum entropy bound is also growing and approaching a constant value.
 
-OK, but this argument only applies to the cosmic event horizon from our perspective, rather than to entropy in the entire universe. On the other hand, one might argue that if the universe is roughly uniform in its properties, then any observer at any other place in the universe will also see the maximum entropy bound increase...
+Assuming that the universe is fairly uniform, the same thing would be happening in other parts of the universe, meaning that the maximum entropy bound would also be increasing everywhere.
 
 ## Entropy in a quantum multiverse
+
+### Is the wavefunction governing our universe approaching a maximally mixed state?
+
+As established before, we're going to think about entropy inside our Everettian multiverse branch, rather than over the entire multiverse. Quantum decoherence theory says that the branches of the multiverse look like a nicely pruned tree:
+
+/ fig /
+
+Over time, each individual branch keeps losing contact with more and more of the other branches. The quantum state inside one single branch becomes more and more mixed, the knowledge of the observers within that branch becomes more and more limited from a global perspective, and thus, from the perspective of the observers inside that branch, entropy increases further and further.
+
+Decoherence theory also says that eventually, this tree will run out of room to expand and the branches of the multiverse will start interfering with each other again. However, decoherence theory is still very much an open research domain, so I'm unsure how much we should trust this prediction. Even the intellectual giant that is Scott Aaronson appears to still be confused about the details of the interplay between cosmic expansion and decoherence theory — a quote from his book Quantum Computing Since Democritus reads: “Incidentally, the fact that our universe is expanding exponentially — that there’s this vacuum energy pushing the galaxies apart — seems like it might play an important role in “thinning out the multiverse tree,” and thereby buying us more time until the branches start interfering with each other. This is something I’d like to understand better.”
+
+### Is the size of the quantum phase space increasing?
 
 [^1]: Humiliation or not, I want to give a shoutout to my friends for being willing to go into deep discussions about this in the first place.
 
